@@ -7,15 +7,22 @@
     <title>虚假成人网页生成</title>
 </head>
 <body>
+    <h1>虚假成人网页生成</h1>
     <p>
     按“已满18岁”后跳转的链接：<input type="text" id="Yi" value=""  placeholder="https://www.bilibili.com/video/BV1GJ411x7h7" /><br />
     按“未满18岁”后跳转的链接：<input type="text" id="Ni" value=""  placeholder="https://xkk1.github.io/" /><br />
     网页的标题：<input type="text" id="Ti" value=""  placeholder="❤️站❤️长❤️推❤️荐❤️" /><br />
     背景图片链接：<input type="text" id="Bi" value=""  placeholder="https://iw233.cn/api/Random.php" /><br />
     <input type="button" value="生成URL" onclick="show_url();" /><br />
-    <a id="aurl" href="#"></a><br />
+    <a id="aurl" href="#" target="_blank"></a><br />
     <textarea id="copy_input" style="display: none">我是用来实现复制的</textarea><br />
     <input id="copyB" type="button" value="复制" onclick="copya()" style="display: none" />
+    </p>
+    <p>
+	<b>小喾苦制作</b>
+	<a href="https://xkk1.github.io/" target="_blank">个人网站</a>
+	<a href="https://space.bilibili.com/513689605" target="_blank">B站（哔哩哔哩）</a> <br />
+	GitHub开源地址：<a href="https://github.com/xkk1/R18/" target="_blank">https://github.com/xkk1/R18/</a>
     </p>
     <script>
         const Yi = document.getElementById("Yi");
