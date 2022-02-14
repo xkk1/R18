@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+<!--原代码仓库:https://github.com/Hisuifeng/cheat 壁纸来源于：https://iw233.cn/ 灵感来源于：https://arcxingye.github.io/r18/-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>❤️站❤️长❤️推❤️荐❤️</title>
+    <style type="text/css">
+        p {
+            margin: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .overlay,
+        .scare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        p.overlay-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: black;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .overlay-button {
+            display: inline-flex;
+            align-items: center;
+            height: 40px;
+            padding-right: 24px;
+            padding-left: 24px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            border-radius: 4px;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        .overlay-buttons-wrapper {
+            margin: 24px -8px -8px;
+        }
+
+        #accept-button {
+            background-color: rgb(255, 0, 0);
+            color: white;
+        }
+
+        #decline-button {
+            color: rgb(0, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        p.overlay-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.5);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        a.overlay-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(255, 0, 0);
+            line-height: 1;
+            position: relative;
+            margin-top: 16px;
+        }
+
+        a.overlay-link::before {
+            position: absolute;
+            content: "";
+            height: calc(50% + 4px);
+            width: calc(100% + 8px);
+            bottom: -4px;
+            left: -4px;
+            background-color: rgba(132, 94, 194, 0.1);
+        }
+
+        .overlay-body {
+            max-width: 512px;
+            text-align: center;
+            font-family: "Inter", sans-serif;
+        }
+
+        .overlay[hidden] {
+            display: none;
+        }
+
+        .overlay {
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(https://iw233.cn/api/Random.php);
+            /*background-image: url(https://hisuifeng.github.io/cheat/background/background.png);*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center 0;
+        }
+
+        .text-bg {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 24px;
+        }
+
+        .scare {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay" class="overlay">
+        <div class="text-bg">
+            <div class="overlay-body">
+                <p class="overlay-title">您是否已满18岁</p>
+                <p class="overlay-description">以下内容可能不适合<b>未满18岁</b>的人群观看，我们需要确认您的年龄。</p>
+                <p class="overlay-description">The following may not be suitable for people <b>under the age of
+                        18</b> and we need to confirm your age.</p>
+                <div class="overlay-buttons-wrapper">
+                    <div id="accept-button" class="overlay-button">已满18岁</div>
+                    <div id="decline-button" class="overlay-button">未满18岁</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 以下JS函数用于获取url参数(https://www.runoob.com/w3cnote/js-get-url-param.html)
+        function getQueryVariable(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+        /*
+        使用实例
+        url 实例：
+        http://www.runoob.com/index.php?id=1&image=awesome.jpg
+        调用 getQueryVariable("id") 返回 1。
+        调用 getQueryVariable("image") 返回 "awesome.jpg"。
+        */
+        // 更改标题
+        var title = getQueryVariable("T");
+        if (title != false) {
+            document.title = decodeURIComponent(title);
+        }
+        // 更改背景
+        var background = getQueryVariable("B");
+        if (background != false) {
+            document.getElementById("overlay").setAttribute('style', 'background-image: url('+decodeURIComponent(background)+')');
+        }
+        // 设置按钮
+        const declineButton = document.getElementById("decline-button");
+        const acceptButton = document.getElementById("accept-button");
+        //encodeURIComponent(url); 转码
+	    //unescape , decodeURI , decodeURIComponent  解码
+        var url = "";
+        function buttonClickY(event) {
+            url = getQueryVariable("Y");
+            if(url == false) {
+                // window.location.href = "https://xkk1.github.io/";
+                window.location.href = "https://www.bilibili.com/video/BV1GJ411x7h7";
+            }else{
+                window.location.href = decodeURIComponent(url);
+            }
+        }
+        function buttonClickN(event) {
+            url = getQueryVariable("N");
+            if(url == false) {
+                // window.location.href = "https://space.bilibili.com/513689605";
+                window.location.href = "https://xkk1.github.io/";
+            }else{
+                window.location.href = decodeURIComponent(url);
+            }
+        }
+        acceptButton.addEventListener("click", buttonClickY);
+        declineButton.addEventListener("click", buttonClickN);
+    </script>
+</body>
+</html>
