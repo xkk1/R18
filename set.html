@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚假成人网页生成</title>
+</head>
+<body>
+    <p>
+    按“已满18岁”后跳转的链接：<input type="text" id="Yi" value=""  placeholder="https://www.bilibili.com/video/BV1GJ411x7h7" /><br />
+    按“未满18岁”后跳转的链接：<input type="text" id="Ni" value=""  placeholder="https://xkk1.github.io/" /><br />
+    网页的标题：<input type="text" id="Ti" value=""  placeholder="❤️站❤️长❤️推❤️荐❤️" /><br />
+    背景图片链接：<input type="text" id="Bi" value=""  placeholder="https://iw233.cn/api/Random.php" /><br />
+    <input type="button" value="生成URL" onclick="show_url();" /><br />
+    <a id="aurl" href="#"></a><br />
+    <textarea id="copy_input" style="display: none">我是用来实现复制的</textarea><br />
+    <input id="copyB" type="button" value="复制" onclick="copya()" style="display: none" />
+    </p>
+    <script>
+        const Yi = document.getElementById("Yi");
+        const Ni = document.getElementById("Ni");
+        const Ti = document.getElementById("Ti");
+        const Bi = document.getElementById("Bi");
+        const aurl = document.getElementById("aurl");
+        const copyB = document.getElementById("copyB");
+        const copy_input = document.getElementById("copy_input");
+        //encodeURIComponent(url); 转码  .innerText
+	    //unescape , decodeURI , decodeURIComponent  解码
+        function get_value(str, element){
+            let value = element.value;
+            if (value){
+                value = "&" + str + "=" + encodeURIComponent(value);
+            }else{
+                value = "";
+            }
+            return value;
+        }
+        function show_url(){
+	    let hurl = "https://xkk1.github.io/other/R18/?f=set"
+	    if (window.location.href.indexOf("https://xkk2.gitee.io") == 0){
+		hurl = "https://xkk2.gitee.io/other/R18/?f=set"
+	    }
+            url = hurl + get_value("Y",Yi) + get_value("N",Ni) + get_value("T",Ti) + get_value("B",Bi);
+            aurl.innerText = url;
+            aurl.href = url;
+            copyB.style = "";
+            copy_input.style = "";
+            copy_input.value = url;
+            copy_input.select();
+        }
+        function copyText(text) {
+            copy_input.value = text; // 修改文本框的内容
+            copy_input.select(); // 选中文本
+            document.execCommand("copy"); // 执行浏览器复制命令
+            alert("复制成功");
+        }
+        function copya(){
+            copyText(aurl.innerText)
+        }
+    </script>
+</body>
+</html>
