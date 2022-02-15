@@ -19,6 +19,9 @@
     <input id="copyB" type="button" value="复制" onclick="copya()" style="display: none" />
     </p>
     <p>
+	获得图片链接可用图床：<a href="https://imgurl.org/" target="_blank">ImgURL免费图床</a> <a href="https://www.hualigs.cn/" target="_blank">遇见图床</a>
+    </p>
+    <p>
 	<b>小喾苦制作</b>
 	<a href="https://xkk1.github.io/" target="_blank">个人网站</a>
 	<a href="https://space.bilibili.com/513689605" target="_blank">B站（哔哩哔哩）</a> <br />
@@ -44,11 +47,7 @@
             return value;
         }
         function show_url(){
-	    let hurl = "https://xkk1.github.io/other/R18/?f=set"
-	    if (window.location.href.indexOf("https://xkk2.gitee.io") == 0){
-		hurl = "https://xkk2.gitee.io/other/R18/?f=set"
-	    }
-            url = hurl + get_value("Y",Yi) + get_value("N",Ni) + get_value("T",Ti) + get_value("B",Bi);
+            url = "https://xkk1.github.io/R18/?f=set" + get_value("Y",Yi) + get_value("N",Ni) + get_value("T",Ti) + get_value("B",Bi);
             aurl.innerText = url;
             aurl.href = url;
             copyB.style = "";
