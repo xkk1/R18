@@ -4,65 +4,239 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>虚假网页生成</title>
+    <title>自定义年龄验证页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #1e6bb8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 声明清除浮动的样式 */
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+            /* IE6、IE7专门清除浮动样式 */
+        }
+
+        html {
+            height: 100%;
+            font-size: 16px;
+            background-color: #159957;
+            background-image: linear-gradient(120deg, #155799, #159957);
+            background-attachment: fixed;
+        }
+
+        @media screen and (min-width: 64em) {   
+            html {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media screen and (min-width: 42em) and (max-width: 64em) {
+            html {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 42em) {
+            html {
+                font-size: 1rem;
+            }
+        }
+
+        .header {
+            color: #fff;
+            text-align: center;
+            padding: 3rem 1rem 3rem 1rem;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .header p {
+            opacity: 0.7;
+        }
+
+        .main {
+            margin: 0 auto;
+            padding: 1rem;
+            max-width: 60rem;
+            background-color: white;
+            border-radius: 0.6rem;
+        }
+
+        .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+            color: #159957;
+        }
+
+        .main input[type=text] {
+            font-size: 0.8rem;
+            border-radius: 1rem;
+            margin: 1px;
+            padding: 0 0.4rem;
+            border-block-width: 1px;
+            outline: none;
+            border: 0.1rem solid rgba(0,0,0,.4);
+            line-height: 1.4;
+            -webkit-transition: all .25s ease-in-out;
+            -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+        }
+
+        .main input[type=text]:hover {
+            border: 0.1rem solid rgba(0,0,0,.5);
+        }
+
+        .main input[type=text]:focus {
+            border: 0.1rem solid #0092fa;
+            background-color: rgba(0,0,0,.05);
+        }
+
+        .main #Yi,
+        .main #Ni,
+        .main #Ui,
+        .main #Gi {
+            width: 96%;
+        }
+
+        .main input[type=button] {
+            margin: 0.2rem 0;
+            color: #f8f8f8;
+            background: #32c682;
+            font-size: 1.2rem;
+            padding: 0.05rem 0.5rem;
+            border: none;
+            border-radius: 0.2rem;
+            -webkit-transition: all .25s ease-in-out;
+            -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+        }
+
+        .main input[type=button]:hover {
+            background-color: #259461;
+        }
+
+        .main textarea {
+            font-size: 1rem;
+            border-width: 0.1rem;
+            width: 100%;
+        }
+
+        .footer {
+            font-size: 1rem;
+            color: darkgrey;
+            text-align: center;
+            padding: 2rem 0 0 0;
+        }
+
+        .footer a {
+            color: darkgrey;
+        }
+    </style>
 </head>
 <body>
-    <h1>虚假网页生成</h1>
-    <p>
-    按“已满18岁”后跳转的链接：<input type="text" id="Yi" value=""  placeholder="https://xkk1.github.io/R18/NeverGonnaGiveYouUp.html" /><br />
-    按“未满18岁”后跳转的链接：<input type="text" id="Ni" value=""  placeholder="https://xkk1.github.io/" /><br />
-    网页的标题：<input type="text" id="Ti" value=""  placeholder="❤️站❤️长❤️推❤️荐❤️" /><br />
-    背景图片链接：<input type="text" id="Bi" value=""  placeholder="https://iw233.cn/api/Random.php" /><br />
-    <input type="button" value="生成URL" onclick="show_url();" /><br />
-    <a id="aurl" href="#" target="_blank"></a><br />
-    <textarea id="copy_input" style="display: none">我是用来实现复制的</textarea><br />
-    <input id="copyB" type="button" value="复制" onclick="copya()" style="display: none" />
-    </p>
-    <p>
-	获得图片链接可用图床：<a href="https://imgurl.org/" target="_blank">ImgURL免费图床</a> <a href="https://www.hualigs.cn/" target="_blank">遇见图床</a>
-    </p>
-    <p>
-	<b>小喾苦制作</b>
-	<a href="https://xkk1.github.io/" target="_blank">个人网站</a>
-	<a href="https://space.bilibili.com/513689605" target="_blank">B站（哔哩哔哩）</a> <br />
-	GitHub开源地址：<a href="https://github.com/xkk1/R18/" target="_blank">https://github.com/xkk1/R18/</a>
-    </p>
+    <div class="header">
+        <h1>自定义年龄验证页面</h1>
+    </div>
+    <div class="main">
+        <h1>获取年龄验证页面 URL</h1>
+        <p>
+            点击“已满18岁”后跳转的 URL：<br />
+            <input type="text" id="Yi" value=""  placeholder="https://xkk1.github.io/R18/publish.html" /><br />
+            点击“未满18岁”后跳转的 URL：<br />
+            <input type="text" id="Ni" value=""  placeholder="https://xkk1.github.io/R18/set.html" /><br />
+            网页的标题：<input type="text" id="Ti" value=""  placeholder="❤️站❤️长❤️推❤️荐❤️" /><br />
+            背景图片 URL：<input type="text" id="Bi" value=""  placeholder="https://www.loliapi.com/acg/" /><br />
+            获得图片 URL 可用图床：<a href="https://imgurl.org/" target="_blank">ImgURL免费图床</a> <a href="https://www.hualigs.cn/" target="_blank">遇见图床</a><br />
+            <input type="button" value="生成自定义年龄验证页面 URL" onclick="show_url1();" /><br />
+            <a id="aURL1" href="#" target="_blank"></a><br />
+            <textarea id="copy_textarea1" style="display: none">我是用来实现复制的</textarea>
+        </p>
+        <h1>获取自定义发布页 URL</h1>
+        <p>
+            显示的 URL：<br />
+            <input type="text" id="Ui" value=""  placeholder="https://xkk1.github.io/" /><br />
+            “点击访问”后跳转的 URL：<br />
+            <input type="text" id="Gi" value=""  placeholder="https://vdse.bdstatic.com/192d9a98d782d9c74c96f09db9378d93.mp4" /><br />
+            <input type="button" value="生成自定义发布页 URL" onclick="show_url2();" /><br />
+            <a id="aURL2" href="#" target="_blank"></a><br />
+            <textarea id="copy_textarea2" style="display: none">我是用来实现复制的</textarea>
+        </p>
+    </div>
+    <div class="footer">
+        <p>
+            by <b><a href="https://xkk1.github.io" target="_blank">小喾苦</a></b> <br />
+            <a href="https://xkk1.github.io/" target="_blank">个人网站</a>
+            <a href="https://space.bilibili.com/513689605" target="_blank">哔哩哔哩</a> <br />
+            GitHub开源地址：<a href="https://github.com/xkk1/R18/" target="_blank">https://github.com/xkk1/R18/</a>
+        </p>
+    </div>
     <script>
         const Yi = document.getElementById("Yi");
         const Ni = document.getElementById("Ni");
         const Ti = document.getElementById("Ti");
         const Bi = document.getElementById("Bi");
-        const aurl = document.getElementById("aurl");
-        const copyB = document.getElementById("copyB");
-        const copy_input = document.getElementById("copy_input");
-        //encodeURIComponent(url); 转码  .innerText
+        const Ui = document.getElementById("Ui");
+        const Gi = document.getElementById("Gi");
+        const aURL1 = document.getElementById("aURL1");
+        const copy_textarea1 = document.getElementById("copy_textarea1");
+        const aURL2= document.getElementById("aURL2");
+        const copy_textarea2 = document.getElementById("copy_textarea2");
+        //encodeURIComponent(url); 转码
 	    //unescape , decodeURI , decodeURIComponent  解码
-        function get_value(str, element){
+        function get_value(str, element) {
             let value = element.value;
-            if (value){
+            if (value) {
                 value = "&" + str + "=" + encodeURIComponent(value);
-            }else{
+            } else {
                 value = "";
             }
             return value;
         }
-        function show_url(){
-            url = "https://xkk1.github.io/R18/?f=set" + get_value("Y",Yi) + get_value("N",Ni) + get_value("T",Ti) + get_value("B",Bi);
-            aurl.innerText = url;
-            aurl.href = url;
-            copyB.style = "";
-            copy_input.style = "";
-            copy_input.value = url;
-            copy_input.select();
-        }
-        function copyText(text) {
-            copy_input.value = text; // 修改文本框的内容
-            copy_input.select(); // 选中文本
+        function show_url1() {
+            let url = "https://xkk1.github.io/R18/?f=set" + get_value("Y",Yi) + get_value("N",Ni) + get_value("T",Ti) + get_value("B",Bi) + "#";
+            aURL1.textContent = url;
+            aURL1.href = url;
+            copy_textarea1.style.display = "";
+            copy_textarea1.value = url;
+            copy_textarea1.select();
             document.execCommand("copy"); // 执行浏览器复制命令
-            alert("复制成功");
         }
-        function copya(){
-            copyText(aurl.innerText)
+        function show_url2() {
+            let url = "https://xkk1.github.io/R18/publish.html?f=set" + get_value("G",Gi) + get_value("U",Ui) + "#";
+            aURL2.textContent = url;
+            aURL2.href = url;
+            copy_textarea2.style.display = "";
+            copy_textarea2.value = url;
+            copy_textarea2.select();
+            document.execCommand("copy"); // 执行浏览器复制命令
         }
     </script>
 </body>

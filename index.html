@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=" lang="zh-CN">
+<html lang="zh-CN">
 <!--原代码仓库:https://github.com/Hisuifeng/cheat 壁纸来源于：https://www.loliapi.com/acg/ 灵感来源于：https://arcxingye.github.io/r18/-->
 <head>
     <meta charset="utf-8">
@@ -105,8 +105,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(https://www.loliapi.com/acg/);
-            /*background-image: url(https://hisuifeng.github.io/cheat/background/background.png);*/
+            /* background-image: url(https://iw233.cn/api/Random.php); */
+            /* background-image: url(https://www.loliapi.com/acg/); */
+            background-image: url(img/background.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center 0;
@@ -115,6 +116,7 @@
         .text-bg {
             background-color: rgba(255, 255, 255, 0.6);
             padding: 24px;
+            border-radius: 5px;
         }
 
         .scare {
@@ -140,13 +142,14 @@
     </div>
     <script type="text/javascript">
         // 以下JS函数用于获取url参数(https://www.runoob.com/w3cnote/js-get-url-param.html)
-        function getQueryVariable(variable)
-        {
+        function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
+            for (var i = 0; i < vars.length; i++) {
                     var pair = vars[i].split("=");
-                    if(pair[0] == variable){return pair[1];}
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
             }
             return(false);
         }
@@ -176,19 +179,16 @@
         function buttonClickY(event) {
             url = getQueryVariable("Y");
             if(url == false) {
-                // window.location.href = "https://xkk1.github.io/";
-                // window.location.href = "https://www.bilibili.com/video/BV1GJ411x7h7";
-		window.location.href = "https://xkk1.github.io/R18/NeverGonnaGiveYouUp.html";
-            }else{
+		        window.location.href = "publish.html";
+            } else {
                 window.location.href = decodeURIComponent(url);
             }
         }
         function buttonClickN(event) {
             url = getQueryVariable("N");
-            if(url == false) {
-                // window.location.href = "https://space.bilibili.com/513689605";
-                window.location.href = "https://xkk1.github.io/";
-            }else{
+            if (url == false) {
+                window.location.href = "set.html";
+            } else {
                 window.location.href = decodeURIComponent(url);
             }
         }
