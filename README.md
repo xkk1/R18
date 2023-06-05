@@ -1,6 +1,6 @@
-# R18
+# 可自定义的年龄验证页面
 
-## [骗人的网页](https://xkk1.github.io/R18/) [自定义](https://xkk1.github.io/R18/set.html)
+## [年龄验证页面](https://xkk1.github.io/R18/) [自定义](https://xkk1.github.io/R18/set.html)
 
 #### 原代码仓库:<https://github.com/Hisuifeng/cheat>  
 
